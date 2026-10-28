@@ -1,0 +1,62 @@
+{
+  "title": "352-life",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up 352-life",
+        "description": "Logging in invalidates the existing 352Life App session for this account. Use a spare member account to which the device has been shared.",
+        "data": {
+          "username": "Phone number",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reauthenticate 352-life",
+        "description": "Logging in invalidates the existing 352Life App session for this account. Use a spare member account to which the device has been shared. Home Assistant never retries a password login automatically.",
+        "data": {
+          "username": "Phone number",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The shared test account was rejected.",
+      "cannot_connect": "Could not connect to the verified 352 cloud service.",
+      "invalid_device": "The account does not contain exactly one valid X83.",
+      "wrong_device": "This account resolves to a different X83.",
+      "missing_private_credentials": "The deployment-only private credential file is missing or invalid.",
+      "unknown": "Unexpected error. Check the Home Assistant logs."
+    },
+    "abort": {
+      "already_configured": "This X83 is already configured.",
+      "reauth_successful": "Reauthentication succeeded."
+    }
+  },
+  "entity": {
+    "switch": {
+      "power": { "name": "Power" },
+      "light": { "name": "Display light" }
+    },
+    "select": {
+      "mode": {
+        "name": "Operating mode",
+        "state": {
+          "auto": "Auto",
+          "turbo": "Turbo",
+          "sleep": "Sleep",
+          "manual": "Manual"
+        }
+      }
+    },
+    "number": {
+      "speed_control": { "name": "Fan speed" }
+    },
+    "sensor": {
+      "pm25": { "name": "PM2.5" },
+      "speed": { "name": "Fan speed level" }
+    },
+    "binary_sensor": {
+      "online": { "name": "Connectivity" }
+    }
+  }
+}

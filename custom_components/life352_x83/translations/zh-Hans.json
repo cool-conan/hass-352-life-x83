@@ -1,0 +1,58 @@
+{
+  "title": "352-life",
+  "config": {
+    "step": {
+      "user": {
+        "title": "配置 352-life",
+        "description": "登录后，原设备上的 352Life App 登录态会失效。建议使用备用的设备共享成员账号进行登录。",
+        "data": {
+          "username": "手机号码",
+          "password": "密码"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新认证 352-life",
+        "description": "登录后，原设备上的 352Life App 登录态会失效。建议使用备用的设备共享成员账号进行登录。Home Assistant 不会自动重试密码登录。",
+        "data": {
+          "username": "手机号码",
+          "password": "密码"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "共享测试账号认证失败。",
+      "cannot_connect": "无法连接到已验证证书的 352 云服务。",
+      "invalid_device": "账号下没有且仅有一台有效 X83。",
+      "wrong_device": "该账号对应的是另一台 X83。",
+      "missing_private_credentials": "部署私有凭据文件缺失或无效。",
+      "unknown": "发生未知错误，请检查 Home Assistant 日志。"
+    },
+    "abort": {
+      "already_configured": "这台 X83 已配置。",
+      "reauth_successful": "重新认证成功。"
+    }
+  },
+  "entity": {
+    "switch": {
+      "power": { "name": "电源" },
+      "light": { "name": "显示灯光" }
+    },
+    "select": {
+      "mode": {
+        "name": "运行模式",
+        "state": {
+          "auto": "自动",
+          "turbo": "强力",
+          "sleep": "睡眠",
+          "manual": "手动"
+        }
+      }
+    },
+    "number": { "speed_control": { "name": "风速控制" } },
+    "sensor": {
+      "pm25": { "name": "PM2.5" },
+      "speed": { "name": "风速档位" }
+    },
+    "binary_sensor": { "online": { "name": "连接状态" } }
+  }
+}
